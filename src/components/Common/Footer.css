@@ -1,0 +1,16 @@
+.steam-footer {
+    background-color: #171d25;
+    padding: 20px;
+    text-align: center;
+    color: #dcdedf;
+  }
+  
+  .footer-content img {
+    width: 120px;
+  }
+  
+  .footer-content p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
