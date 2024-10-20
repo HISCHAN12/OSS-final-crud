@@ -16,7 +16,11 @@ const ShowUser = () => {
     setIsLoading(true);
     try {
       await axios.delete(`${showUserApi}/${id}`);
-      setUser(user.filter((item) => item.id !== id));
+      const updatedUsers = user.filter((item) => item.id !== id);
+      setUser(updatedUsers);
+      setFilteredUser(updatedUsers.filter((u) =>
+        u.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ));
     } catch (error) {
       setError("Failed to delete user.");
     } finally {
