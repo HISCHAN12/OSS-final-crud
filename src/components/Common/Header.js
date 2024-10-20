@@ -21,7 +21,6 @@ const Header = () => {
             <li><Link to="/create-user">친구추가</Link></li>
             <li><Link to="/support">탑 100</Link></li>
           </ul>
-          <button className="btn btn-install-steam">Steam 설치</button>
         </div>
       </div>
     </nav>

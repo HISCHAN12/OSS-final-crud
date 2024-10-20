@@ -4,7 +4,8 @@
   overflow: hidden;
   background-color: black;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fullScreenVideo {
@@ -13,8 +14,27 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 768px) {
-  .fullScreenVideo {
-    height: auto;
-  }
+.button-group {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button-group .MuiButton-root {
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.button-group .MuiButton-containedPrimary {
+  background-color: #66c0f4;
+}
+
+.button-group .MuiButton-outlinedSecondary {
+  border-color: #66c0f4;
+  color: #66c0f4;
+}
+
+.button-group .MuiButton-containedSuccess {
+  background-color: #5c7e10;
 }

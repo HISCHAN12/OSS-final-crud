@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Loader from "../Common/Loader";
-import "./ShowUser.css"; 
+import "./ShowUser.css";
 
 const ShowUser = () => {
-  const showUserApi = "https://67135cca6c5f5ced66262c7e.mockapi.io//user"; 
-
+  const showUserApi = "https://67135cca6c5f5ced66262c7e.mockapi.io//user";
   const [user, setUser] = useState([]);
+  const [filteredUser, setFilteredUser] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(""); 
 
   const handelDelete = async (id) => {
     setIsLoading(true);
@@ -29,6 +30,7 @@ const ShowUser = () => {
       try {
         const { data } = await axios.get(showUserApi);
         setUser(data);
+        setFilteredUser(data); 
       } catch (err) {
         setError("Error fetching users.");
       } finally {
@@ -38,11 +40,30 @@ const ShowUser = () => {
     getUsers();
   }, []);
 
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value); 
+    const filtered = user.filter((u) =>
+      u.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilteredUser(filtered);
+  };
+
   return (
     <div className="steam-theme mt-5">
       <h2 className="list-header">친구 목록</h2>
       {isLoading && <Loader />}
       {error && <p>Error: {error}</p>}
+
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="이름으로 검색하기"
+          value={searchTerm}
+          onChange={handleSearch}
+          className="form-control search-input"
+        />
+      </div>
+
       <table className="table table-striped steam-table">
         <thead>
           <tr>
@@ -58,7 +79,7 @@ const ShowUser = () => {
           </tr>
         </thead>
         <tbody>
-          {user?.map((item, i) => (
+          {filteredUser?.map((item, i) => (
             <tr key={item.id}>
               <td>{i + 1}</td>
               <td>{item.name}</td>
