@@ -1,10 +1,3 @@
-# Getting Started with Create React App
+netlify url : https://rainbow-zabaione-a8cc61.netlify.app/
 
-This project realate to react CRUD
-
-## How to start this project
- 
-    step 1: git clone https://github.com/bhairabpatra/crud-react-app.git
-    step 2: npm i
-    step 3: json-server --watch db.json // http://localhost:3000
-    step 4:  npm  // http://localhost:3001
+유의 사항 : 스팀 api를 활용한 게임 리스트를 보기위해서는 https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=ko 에서 확장 프로그램을 설치. 실행 후 왼쪽 로고를 누른 후에(색깔이 생김) netlify를 통해 top 100 을 확인하면 실행됩니다!
