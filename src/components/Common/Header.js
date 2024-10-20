@@ -19,7 +19,7 @@ const Header = () => {
             <li><Link to="/">상점</Link></li>
             <li><Link to="show-user">친구창</Link></li>
             <li><Link to="/create-user">친구추가</Link></li>
-            <li><Link to="/support">탑 100</Link></li>
+            <li><Link to="/rank">탑 100</Link></li>
           </ul>
         </div>
       </div>
