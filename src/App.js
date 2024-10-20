@@ -8,6 +8,9 @@ import Header from "./components/Common/Header";
 import Footer from "./components/Common/Footer";
 import Home from "./components/Layout/Home";
 import ShowHandol from "./components/User/ShowHandol";
+import Rank from "./components/User/Rank";
+import Detail from "./components/User/Detail";
+
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
             <Route path="/user/:id" element={<User />} />
             <Route path="/create-user" element={<CreateUser />} />
             <Route path="/show-user" element={<ShowUser />} />
+            <Route path="/rank" element={<Rank />} />
+            <Route path="/rank/:id" element={<Detail />} />
             <Route path="/show-handol" element={<ShowHandol />} />
           </Routes>
           <Footer />
@@ -31,3 +36,4 @@ function App() {
 }
 
 export default App;
+

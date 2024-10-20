@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
+  const handleInstallClick = () => {
+    window.location.href = "https://store.steampowered.com/";
+  };
+
   return (
     <nav className="steam-navbar">
       <div className="navbar-content">
@@ -19,9 +23,11 @@ const Header = () => {
             <li><Link to="/">상점</Link></li>
             <li><Link to="show-user">친구창</Link></li>
             <li><Link to="/create-user">친구추가</Link></li>
-            <li><Link to="/support">탑 100</Link></li>
+            <li><Link to="/rank">탑 100</Link></li>
           </ul>
-          <button className="btn btn-install-steam">Steam 설치</button>
+          <button className="btn btn-install-steam" onClick={handleInstallClick}>
+            Steam 설치
+          </button>
         </div>
       </div>
     </nav>
